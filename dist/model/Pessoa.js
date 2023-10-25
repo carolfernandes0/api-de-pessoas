@@ -4,22 +4,21 @@ exports.Pessoa = void 0;
 class Pessoa {
     nome;
     cpf;
-    datadenascimento;
+    data_nascimento;
     telefone;
     endereco;
     altura;
     peso;
-    //metodo construtor
-    constructor(_nome, _cpf, _data_nascimento, _tefone, _endereco, _altura, _peso) {
+    //metodo contrutor
+    constructor(_nome, _cpf, _data_nascimento, _telefone, _endereco, _altura, _peso) {
         this.nome = _nome;
         this.cpf = _cpf;
-        this.datadenascimento = _data_nascimento;
-        this.telefone = _tefone;
+        this.data_nascimento = _data_nascimento;
+        this.telefone = _telefone;
         this.endereco = _endereco;
         this.altura = _altura;
         this.peso = _peso;
     }
-    // método GETTERS and SETTERS
     getNome() {
         return this.nome;
     }
@@ -33,10 +32,10 @@ class Pessoa {
         this.cpf = _cpf;
     }
     getdata_nascimento() {
-        return this.datadenascimento;
+        return this.data_nascimento;
     }
     setdata_nascimento(_data_nascimento) {
-        this.datadenascimento = _data_nascimento;
+        this.data_nascimento = _data_nascimento;
     }
     gettelefone() {
         return this.nome;
@@ -56,13 +55,19 @@ class Pessoa {
     setpeso(_peso) {
         this.peso = _peso;
     }
-    // implementar os metodos 
-    falar() {
-        // logica de negócio
-        console.log(`${this.nome} está falando...`);
+    mostraPessoa() {
+        console.log(`Nome: ${this.nome}
+        CPF: ${this.nome}
+        Data: ${this.data_nascimento}
+        Telefone:: ${this.telefone}
+        Endereço: ${this.endereco}
+        Altura ${this.altura}
+        Peso ${this.peso}`);
     }
-    falarfrase(_frase) {
-        //lógica de negócio
+    falar() {
+        console.log(`${this.nome} está falando`);
+    }
+    falarFrase(_frase) {
         console.log(`${this.nome} fala: ${_frase}`);
     }
     andar() {
@@ -78,6 +83,11 @@ class Pessoa {
     }
     comerPrato(_prato) {
         console.log(`${this.nome} está comendo ${_prato}`);
+    }
+    /** CRUD */
+    cadastroPessoa(baninha) {
+        //persistindo os dados
+        console.log(`${baninha.nome} cadastrado com sucesso`);
     }
 }
 exports.Pessoa = Pessoa;
